@@ -18,6 +18,9 @@ export const calculator = (inputString) => {
 
   for (let i = 0; i < inputArr.length; i++) {
     const currentWord = inputArr[i];
+    if (currentWord.length > 16) {
+      console.log(currentWord);
+    }
 
     const isFound = lengthArr.some((element) => {
       if (element.length === currentWord.length) {

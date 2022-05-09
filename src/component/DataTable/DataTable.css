@@ -1,6 +1,6 @@
 .tester__table {
   width: 80%;
-  height: 170px;
+  height: auto;
   position: relative;
 }
 
