@@ -5,12 +5,35 @@ export const calculator = (inputString) => {
   function replaceAll(str, find, replace) {
     return str.replace(new RegExp(escapeRegExp(find), "g"), replace);
   }
-  const removeDot = replaceAll(inputString, ".", "");
-  const removeLeftBrackets = replaceAll(removeDot, "(", "");
-  const removeRightBrackets = replaceAll(removeLeftBrackets, ")", "");
-  const removeDash = replaceAll(removeRightBrackets, "-", " ");
-  const removeNewLine = replaceAll(removeDash, "\n", " ");
-  const wordsArr = removeNewLine.split(" ");
+
+  const removeItemArray = [
+    ".",
+    "(",
+    ")",
+    '"',
+    ";",
+    ":",
+    "%",
+    "!",
+    "$",
+    "&",
+    "?",
+    "'",
+  ];
+  const replaceArray = ["-", "\n"];
+
+  for (let i = 0; i < removeItemArray.length; i++) {
+    console.log(removeItemArray[i]);
+    inputString = replaceAll(inputString, removeItemArray[i], "");
+  }
+
+  for (let i = 0; i < replaceArray.length; i++) {
+    inputString = replaceAll(inputString, replaceArray[i], " ");
+  }
+
+  console.log(inputString);
+
+  const wordsArr = inputString.split(" ");
 
   const inputArr = wordsArr.filter((element) => isNaN(element));
 
