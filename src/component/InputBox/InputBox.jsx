@@ -57,6 +57,7 @@ const InputBox = ({ setResponse }) => {
           }}
           onClick={() => {
             setInputValue("");
+            setResponse([]);
           }}
         >
           Clear

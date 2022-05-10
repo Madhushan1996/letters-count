@@ -19,6 +19,7 @@ export const calculator = (inputString) => {
     "&",
     "?",
     "'",
+    ",",
   ];
   const replaceArray = ["-", "\n"];
 
